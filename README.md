@@ -1,0 +1,2 @@
+# GitADFTrng
+Git ADF Training.
