@@ -1,0 +1,13 @@
+{
+	"name": "DataSetAzrMutitables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TargetAzSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

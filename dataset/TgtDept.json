@@ -1,0 +1,32 @@
+{
+	"name": "TgtDept",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TargetAzSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "dept_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "dept_name",
+				"type": "varchar"
+			},
+			{
+				"name": "revenue",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dept"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
