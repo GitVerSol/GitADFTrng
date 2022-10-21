@@ -1,0 +1,67 @@
+{
+	"name": "dataflow_load_tgtbook",
+	"properties": {
+		"description": "dataflow_load_tgtbook",
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable_book",
+						"type": "DatasetReference"
+					},
+					"name": "srcbook"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTableTgtBook",
+						"type": "DatasetReference"
+					},
+					"name": "tgtbook"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filterbkprice"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     dp_price as integer",
+				"}",
+				"source(output(",
+				"          bookid as integer,",
+				"          bookname as string,",
+				"          bookprice as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> srcbook",
+				"srcbook filter(bookprice>=$dp_price) ~> filterbkprice",
+				"filterbkprice sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     input(",
+				"          book_id as integer,",
+				"          book_name as string,",
+				"          price as integer",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          book_id = bookid,",
+				"          book_name = bookname,",
+				"          price = bookprice",
+				"     )) ~> tgtbook"
+			]
+		}
+	}
+}

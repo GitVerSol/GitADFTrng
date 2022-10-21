@@ -1,0 +1,33 @@
+{
+	"name": "ds_src_incrload",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SrcAzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			},
+			{
+				"name": "lst_updt_date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "src_incrload"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

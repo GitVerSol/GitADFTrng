@@ -1,0 +1,9 @@
+{
+	"name": "imdf123",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2aa6c7e6-b156-4026-b436-b0da023873c3",
+		"tenantId": "e0c0727b-e78f-4b8c-90e1-e05ab92d58e5"
+	}
+}

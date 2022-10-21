@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_16p_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LnkServAzureSqlDatabase002",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_16p_20221010"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "MainControlTable_16p"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
