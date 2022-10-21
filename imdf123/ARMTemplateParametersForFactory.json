@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "imdf123"
+		},
+		"AzureBlobStorage1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureSynapseAnalyticsDWLnkdSrv_connectionString": {
+			"value": ""
+		},
+		"LSAzureSqlDatabaseOutsideDB_connectionString": {
+			"value": ""
+		},
+		"LnkServAzureSqlDatabase002_connectionString": {
+			"value": ""
+		},
+		"SourceAzDLStorage_accountKey": {
+			"value": ""
+		},
+		"SrcAzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"TargetAzDLakeStorage_accountKey": {
+			"value": ""
+		},
+		"TargetAzSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"kkdatalake2_accountKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://imdatalake123.blob.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_tenant": {
+			"value": "e0c0727b-e78f-4b8c-90e1-e05ab92d58e5"
+		},
+		"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "f966a866-1c56-4572-91e2-f4d3bdaa7927"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"SourceAzDLStorage_properties_typeProperties_url": {
+			"value": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"TargetAzDLakeStorage_properties_typeProperties_url": {
+			"value": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"kkdatalake2_properties_typeProperties_url": {
+			"value": "https://kkdl456.dfs.core.windows.net/"
+		}
+	}
+}

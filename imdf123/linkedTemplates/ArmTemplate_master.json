@@ -1,0 +1,282 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "imdf123"
+		},
+		"AzureBlobStorage1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+		},
+		"AzureSynapseAnalyticsDWLnkdSrv_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalyticsDWLnkdSrv'"
+		},
+		"LSAzureSqlDatabaseOutsideDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSAzureSqlDatabaseOutsideDB'"
+		},
+		"LnkServAzureSqlDatabase002_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LnkServAzureSqlDatabase002'"
+		},
+		"SourceAzDLStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'SourceAzDLStorage'"
+		},
+		"SrcAzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SrcAzureSqlDatabase'"
+		},
+		"TargetAzDLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'TargetAzDLakeStorage'"
+		},
+		"TargetAzSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'TargetAzSqlDatabase'"
+		},
+		"kkdatalake2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'kkdatalake2'"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://imdatalake123.blob.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "e0c0727b-e78f-4b8c-90e1-e05ab92d58e5"
+		},
+		"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "f966a866-1c56-4572-91e2-f4d3bdaa7927"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"SourceAzDLStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"TargetAzDLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://imdatalake123.dfs.core.windows.net/"
+		},
+		"kkdatalake2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://kkdl456.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "imdf123_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_servicePrincipalCredential": {
+						"value": "[parameters('AzureBlobStorage1_servicePrincipalCredential')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"AzureSynapseAnalyticsDWLnkdSrv_connectionString": {
+						"value": "[parameters('AzureSynapseAnalyticsDWLnkdSrv_connectionString')]"
+					},
+					"LSAzureSqlDatabaseOutsideDB_connectionString": {
+						"value": "[parameters('LSAzureSqlDatabaseOutsideDB_connectionString')]"
+					},
+					"LnkServAzureSqlDatabase002_connectionString": {
+						"value": "[parameters('LnkServAzureSqlDatabase002_connectionString')]"
+					},
+					"SourceAzDLStorage_accountKey": {
+						"value": "[parameters('SourceAzDLStorage_accountKey')]"
+					},
+					"SrcAzureSqlDatabase_connectionString": {
+						"value": "[parameters('SrcAzureSqlDatabase_connectionString')]"
+					},
+					"TargetAzDLakeStorage_accountKey": {
+						"value": "[parameters('TargetAzDLakeStorage_accountKey')]"
+					},
+					"TargetAzSqlDatabase_connectionString": {
+						"value": "[parameters('TargetAzSqlDatabase_connectionString')]"
+					},
+					"kkdatalake2_accountKey": {
+						"value": "[parameters('kkdatalake2_accountKey')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_tenant')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"SourceAzDLStorage_properties_typeProperties_url": {
+						"value": "[parameters('SourceAzDLStorage_properties_typeProperties_url')]"
+					},
+					"TargetAzDLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('TargetAzDLakeStorage_properties_typeProperties_url')]"
+					},
+					"kkdatalake2_properties_typeProperties_url": {
+						"value": "[parameters('kkdatalake2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "imdf123_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'imdf123_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "imdf123_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'imdf123_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "imdf123_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'imdf123_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "imdf123_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'imdf123_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "imdf123_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'imdf123_ArmTemplate_4')]"
+			]
+		}
+	]
+}
